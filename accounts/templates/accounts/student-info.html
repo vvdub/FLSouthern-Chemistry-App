@@ -1,0 +1,34 @@
+{% extends 'base.html' %} 
+{% block head %}
+<title>Student Information</title>
+{% endblock %}
+
+{% block body%}
+<div class="container">
+  <br>
+  <h2>{{student.stud_firstname}} {{student.stud_lastname}}'s Courses and Grades</h2>
+  <br>
+    <table class="table table-hover table">
+      <thead>
+        <tr>
+          <th scope="col">Course Name</th>
+          <th scope="col">Semester</th>
+          <th scope="col">Year</th>
+          <th scope="col">Class Grade</th>
+          <th scope="col">Lab Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for grade in grades %}
+        <tr>
+          <td>{{ grade.course }}</td>
+          <td>{{ grade.semester }}</td>
+          <td>{{ grade.year }}</td>
+          <td>{{ grade.class_grade }}</td>
+          <td>{{ grade.lab_grade }}</td>
+          {% endfor %}
+        </tr>
+      </tbody>
+    </table>
+</div>
+{% endblock %}

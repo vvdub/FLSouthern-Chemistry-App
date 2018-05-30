@@ -1,0 +1,32 @@
+{% extends 'base.html' %} {% block head %}
+<title>Add Student</title>
+<script src="//www.powr.io/powr.js?external-type=html"></script> {% endblock %} {% block body%}
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="card border-secondary">
+                        <div class="card-header">
+                            <h3 class="mb-0 my-2">Add Student</h3>
+                        </div>
+                        <div class="card-body">
+                            <form method="post">
+                                {% csrf_token %} {{ form.as_p }}
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-lg float-right">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/row-->
+
+        </div>
+        <!--/col-->
+    </div>
+    <!--/row-->
+</div>
+<!--/container-->
+{% endblock %}

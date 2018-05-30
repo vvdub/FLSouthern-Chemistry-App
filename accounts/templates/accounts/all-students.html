@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block head %}
+<title>All Students</title>
+<style>
+  hr.style-two {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+{% endblock %} {% block body%}
+<div class="container">
+  <br>
+  <h2>All Students</h2>
+  <br>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Student Name</th>
+        <th scope="col">Student ID</th>
+        <th scope="col">Student Major</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for student in students %}
+      <tr>
+        <td>
+          <a href="/account/all-students/{{student.id}}">{{ student.stud_firstname }} {{ student.stud_lastname }}</a>
+        </td>
+        <td>{{ student.stud_id }}</td>
+        <td>{{ student.stud_maj }}</td>
+        {% endfor %}
+      </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
